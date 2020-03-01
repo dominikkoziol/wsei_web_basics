@@ -1,3 +1,8 @@
 h1 {
     background: red;
 }
+
+.form-element{
+    display: flex;
+    flex-direction: column;
+}
