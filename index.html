@@ -2,48 +2,55 @@
 <html>
 
 <head>
-    <title>Coffee</title>
+    <title>Only good beans</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-wdth, initial-scale=1.0" />
     <meta name="description" content="WSEI HTML, CSS and JS" />
     <meta name="author" content="Dominik Koziol" />
-    <link rel="stylesheet" content="css/reset.css" />
+    <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/main.css" />
 
 </head>
 
 <body>
-    <h1>Hello world</h1>
-    <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tincidunt, sem eget sollicitudin suscipit, tellus
-        tortor tempor orci,
-        a tempor nunc lacus quis augue. Curabitur congue rutrum felis nec pulvinar. Proin ac odio velit. Morbi vel
-        accumsan turpis.
-        Quisque aliquet sapien nec odio ultricies, vitae cursus sapien dictum. Duis nec tortor vel leo pharetra
-        consectetur varius id orci.
-        Integer viverra justo quis eleifend dignissim. Nulla facilisi. Fusce non est vitae velit semper sollicitudin
-        vitae eget elit.
-        Donec vehicula purus purus, in bibendum ligula imperdiet in. Praesent in condimentum neque. Praesent elementum
-        purus sit amet odio lacinia laoreet.
-
-        Donec placerat nibh in lorem pretium semper. Mauris congue feugiat lacus nec hendrerit. Suspendisse maximus
-        commodo sodales.
-        Integer sagittis maximus nulla, ut lacinia sapien bibendum id. Sed et ultrices libero.
-        Vestibulum laoreet, diam tincidunt consectetur euismod, mauris nisl semper felis, nec tincidunt nisi nulla eget
-        libero. Etiam dui erat,
-        bibendum nec tristique auctor, venenatis at nisl. Quisque a felis vel diam hendrerit vulputate. Sed id justo
-        magna. Suspendisse potenti.
-        Mauris a justo dignissim, sagittis elit vel, sollicitudin odio. Sed ornare nisi vel interdum consectetur.
-        Phasellus ultrices feugiat maximus.
-        Ut convallis diam a pharetra molestie.
-    </p>
-    <div>
-        <video controls>
-            <source src="assets/video.mp4" type="video/mp4">
-        </video>
+    <div class="main container">
+        <nav>
+            <ul>
+                <li><a href="index.html"><img src="assets/bean.svg" alt="bean"></a></li>
+                <li><a class="active">Home</a></li>
+                <li><a>About</a></li>
+                <li><a>Contact</a></li>
+                <li><a>ToDo List</a></li>
+            </ul>
+        </nav>
+        <div class="jumbotron">
+            <div>
+                <div>
+                    <h1>Choosing Good
+                        Quality Beans</h1>
+                    <p>Ipsum eu in ut id cupidatat ut aliquip mollit nulla. Adipisicing commodo cupidatat laboris cillum
+                        labore voluptate aliquip ea proident dolore nostrud irure.</p>
+                </div>
+            </div>
+            <div>
+                <!-- <img src="assets/cup_coffee.png" alt="coffee cup"> -->
+            </div>
+        </div>
     </div>
 
-    <form id="note-form">
+    <div class="offer container">
+        <h2>Popular ways</h2>
+
+        <div class="offer-container">
+            <div></div>
+        </div>
+    </div>
+
+    <script src="scripts/app.js"></script>
+</body>
+
+</html>
+<!-- <form id="note-form">
         <div class="form-element">
             <label for="name">Nazwa</label>
             <input type="text" id="name"/>
@@ -53,8 +60,4 @@
             <textarea id="description"></textarea>
         </div>
         <button type="button" onclick="addNote()">Dodaj notatkę!</button>
-    </form>
-    <script src="scripts/app.js"></script>
-</body>
-
-</html>
+    </form> -->

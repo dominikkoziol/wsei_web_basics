@@ -1,8 +1,108 @@
-h1 {
-    background: red;
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
 }
 
-.form-element{
+.container {
+    height: 100vh;
+}
+
+.container nav {
+    position: fixed;
+    top:50px;
+    width: 100%;
+    /* background-color: #723A20; */
+}
+.active {
+    color: white;
+    text-decoration: underline;
+}
+.container nav ul li {
+    display: inline-block;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0 30px;
+    cursor: pointer;
+    transition: 700ms;
+    
+}
+
+.container nav ul li:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.main {
+    background: radial-gradient(84.75% 228.38% at 84.75% 27.29%, #A55F3E 0%, #6E381E 97.1%);
+    position: relative;
+    box-sizing: border-box;
+    padding: 50px 0 0 50px;
+}
+
+.jumbotron {
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    display: flex;
+}
+
+.jumbotron div {
+    width: 50%;
+    color: white;
+}
+
+.jumbotron div p {
+    margin-top: 25px;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.jumbotron div h1 {
+    font-size: 68px;
+    line-height: 90px;
+    font-weight: bold;
+
+}
+.jumbotron div:first-of-type {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.jumbotron div:first-of-type div{
+    width: 650px;
+}
+
+.jumbotron div:nth-of-type(2) {
+    background-image: url("../assets/cup_coffee.png");
+    background-position: bottom right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width:750px;
+    box-sizing: border-box;
+    padding-left: 300px;
+}
+
+
+.offer {
+    box-sizing: border-box;
+    padding: 40px;
+}
+
+.offer h2 {
+    text-align: center;
+    font-size: 55px;
+    color: #6E381E;
+    font-weight: bold;
+}
+
+.offer-container {
+    display: flex;
+}
+
+.offer-container div {
+    box-shadow: 0px 10px 30px rgba(106, 59, 36, 0.14);
 }
