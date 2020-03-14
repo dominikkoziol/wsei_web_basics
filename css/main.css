@@ -10,14 +10,16 @@ body {
 
 .container nav {
     position: fixed;
-    top:50px;
+    top: 50px;
     width: 100%;
     /* background-color: #723A20; */
 }
+
 .active {
     color: white;
     text-decoration: underline;
 }
+
 .container nav ul li {
     display: inline-block;
     text-transform: uppercase;
@@ -25,7 +27,7 @@ body {
     margin: 0 30px;
     cursor: pointer;
     transition: 700ms;
-    
+
 }
 
 .container nav ul li:hover {
@@ -65,6 +67,7 @@ body {
     font-weight: bold;
 
 }
+
 .jumbotron div:first-of-type {
     display: flex;
     flex-direction: column;
@@ -72,7 +75,7 @@ body {
     align-items: center;
 }
 
-.jumbotron div:first-of-type div{
+.jumbotron div:first-of-type div {
     width: 650px;
 }
 
@@ -81,7 +84,7 @@ body {
     background-position: bottom right;
     background-size: contain;
     background-repeat: no-repeat;
-    width:750px;
+    width: 750px;
     box-sizing: border-box;
     padding-left: 300px;
 }
@@ -90,6 +93,11 @@ body {
 .offer {
     box-sizing: border-box;
     padding: 40px;
+    background-color: #E5E5E5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .offer h2 {
@@ -101,8 +109,53 @@ body {
 
 .offer-container {
     display: flex;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    font-weight: bold;
+    flex-wrap: wrap;
 }
 
-.offer-container div {
+.offer-container>div {
     box-shadow: 0px 10px 30px rgba(106, 59, 36, 0.14);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    height: 400px;
+}
+
+.coffee-title p {
+    display: flex;
+}
+
+.coffee-button {
+    background-color: #6E381E;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.show-more {
+    background: #6E381E;
+    box-shadow: 0px 10px 30px rgba(106, 59, 36, 0.14);
+    border-radius: 41px;
+    text-align: center;
+    color: #FFFFFF;
+
+    text-shadow: 0px 18px 30px rgba(110, 56, 30, 0.16);
+    font-weight: 500;
+    font-size: 22px;
+    padding: 15px;
+    box-sizing: border-box;
 }
