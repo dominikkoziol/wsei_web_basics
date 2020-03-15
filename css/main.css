@@ -212,3 +212,7 @@ footer div:first-of-type {
 footer div img {
     color: #6E381E;
 }
+
+#note-form {
+    margin-top: 300px;
+}

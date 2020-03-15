@@ -1,7 +1,10 @@
 let noteArray = (localStorage.getItem("Note") ? JSON.parse(localStorage.getItem("Note")) : []);
 let currentPage = localStorage.getItem("currentPage") ? localStorage.getItem("currentPage") : "home";
 const contentSection = document.getElementById("content");
+let notesContent;
 loadPage(currentPage);
+loadNotes();
+
 
 /**
  * @name - Name of note
@@ -10,10 +13,12 @@ loadPage(currentPage);
 class Note {
     name = "";
     content = "";
-    createdDate = new Date().toJSON().slice(0, 10).replace(/-/g, '/');
+    createdDate = null;
     constructor(name, content) {
         this.name = name;
         this.content = content;
+       
+        this.createdDate = getDate();
     }
 }
 
@@ -29,6 +34,21 @@ function addNote() {
     console.log(noteArray);
 
     localStorage.setItem("Note", JSON.stringify(noteArray));
+
+    var newElement = document.createElement("div");
+    newElement.innerHTML = "Nazwa notatki: " + note.name + "<br /> Opis: " + note.content + "<br /> Data stworzenia: " + note.createdDate;
+    notesContent.appendChild(newElement);
+}
+
+function loadNotes() {
+    if (localStorage.getItem("Note") && notesContent) {
+        var noteArray = JSON.parse(localStorage.getItem("Note"));
+        noteArray.forEach(note => {
+            var newElement = document.createElement("div");
+            newElement.innerHTML = "Nazwa notatki: " + note.name + "<br /> Opis: " + note.content + "<br /> Data stworzenia: " + note.createdDate;
+            notesContent.appendChild(newElement);
+        });
+    }
 }
 
 function loadPage(href) {
@@ -49,7 +69,26 @@ function loadPage(href) {
     var newMenuElement = document.getElementById(href + '-link');
     oldMenuElement.removeAttribute("class");
     newMenuElement.classList.add("active");
-
+    if (href == "todo" && !notesContent) {
+        notesContent = document.getElementById("my-notes");
+    }
     currentPage = href;
     localStorage.setItem("currentPage", currentPage);
+}
+
+
+function getDate() {
+    var currentdate = new Date();
+    var day = currentdate.getDate();
+    var month = currentdate.getMonth() + 1;
+    var hour = currentdate.getHours();
+    var minutes = currentdate.getMinutes();
+    var seconds = currentdate.getSeconds();
+
+    return (day < 10 ? '0' + day : day) + "/" +
+    (month < 10 ? '0' + month : month) + "/" +
+    currentdate.getFullYear() + " " +
+    (hour < 10 ? '0' + hour : hour) + ":" +
+    (minutes < 10 ? '0' + minutes : minutes) + ":" +
+    (seconds < 10 ? '0' + seconds : seconds)
 }
