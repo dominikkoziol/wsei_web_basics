@@ -1,0 +1,20 @@
+#note-form {
+    margin-top: 300px;
+}
+
+#my-notes {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+#my-notes div{
+    width: 350px;
+    margin: 10px;
+    line-height: 25px;
+    box-sizing: border-box;
+    background-color: #E5E5E5;
+    padding: 10px;
+    border-radius: 6px;
+    color:#6a3b24b8;
+}

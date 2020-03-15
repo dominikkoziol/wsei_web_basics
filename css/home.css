@@ -1,0 +1,150 @@
+.active {
+    color: white;
+    text-decoration: underline;
+}
+
+.container nav ul li:hover {
+    color: white;
+    text-decoration: underline;
+}
+
+.main {
+    background: radial-gradient(84.75% 228.38% at 84.75% 27.29%, #A55F3E 0%, #6E381E 97.1%);
+    position: relative;
+    box-sizing: border-box;
+    padding: 50px 0 0 50px;
+}
+
+.two-column {
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+    display: flex;
+}
+
+.two-column>div {
+    width: 50%;
+    color: white;
+}
+
+.two-column div p {
+    margin-top: 25px;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 28px;
+}
+
+.two-column div h1 {
+    font-size: 68px;
+    line-height: 90px;
+    font-weight: bold;
+
+}
+
+.two-column div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.two-column div:first-of-type div {
+    width: 650px;
+}
+
+.cup-of-coffe {
+    background-image: url("../assets/cup_coffee.png");
+}
+
+.two-column div:nth-of-type(2) {
+    background-position: bottom right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 750px;
+    box-sizing: border-box;
+    padding-left: 300px;
+}
+
+
+.offer {
+    box-sizing: border-box;
+    padding: 40px;
+    background-color: #E5E5E5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.offer h2 {
+    text-align: center;
+    font-size: 55px;
+    color: #6E381E;
+    font-weight: bold;
+}
+
+.offer-container {
+    display: flex;
+    height: 80%;
+    justify-content: center;
+    align-items: center;
+    color: #000000;
+    font-weight: bold;
+    flex-wrap: wrap;
+}
+
+.offer-container>div {
+    box-shadow: 0px 10px 30px rgba(106, 59, 36, 0.14);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    height: 400px;
+}
+
+.coffee-title p {
+    display: flex;
+}
+
+.coffee-button {
+    background-color: #6E381E;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.show-more {
+    background: #6E381E;
+    box-shadow: 0px 10px 30px rgba(106, 59, 36, 0.14);
+    border-radius: 41px;
+    text-align: center;
+    color: #FFFFFF;
+
+    text-shadow: 0px 18px 30px rgba(110, 56, 30, 0.16);
+    font-weight: 500;
+    font-size: 22px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+
+.trivia {
+    background-image: url(../assets/trivia_background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.big-bean {
+    background-image: url('../assets/big_bean.png');
+}

@@ -3,7 +3,39 @@ let currentPage = localStorage.getItem("currentPage") ? localStorage.getItem("cu
 const contentSection = document.getElementById("content");
 let notesContent;
 loadPage(currentPage);
-loadNotes();
+
+
+
+
+function loadPage(href) {
+    var xmlhttp = new XMLHttpRequest();
+    
+    xmlhttp.open("GET", href + '.html', false);
+    xmlhttp.send();
+    var element = document.getElementById(currentPage);
+    if (element) element.parentNode.removeChild(element);
+
+    var newElement = document.createElement("div");
+    newElement.setAttribute("id", href);
+
+    newElement.innerHTML = xmlhttp.responseText;
+    contentSection.appendChild(newElement);
+
+
+    var oldMenuElement = document.getElementById(currentPage + '-link');
+    var newMenuElement = document.getElementById(href + '-link');
+    oldMenuElement.removeAttribute("class");
+    newMenuElement.classList.add("active");
+    if (href == "todo") {
+        if(!notesContent) notesContent = document.getElementById("my-notes");
+        loadNotes();
+    }
+    currentPage = href;
+    localStorage.setItem("currentPage", currentPage);
+}
+
+
+// ------------------ NOTES FUNCTIONS ------------------
 
 
 /**
@@ -17,7 +49,6 @@ class Note {
     constructor(name, content) {
         this.name = name;
         this.content = content;
-       
         this.createdDate = getDate();
     }
 }
@@ -41,42 +72,27 @@ function addNote() {
 }
 
 function loadNotes() {
-    if (localStorage.getItem("Note") && notesContent) {
-        var noteArray = JSON.parse(localStorage.getItem("Note"));
-        noteArray.forEach(note => {
+    notesContent.innerHTML = "";
+    console.log(notesContent);
+    if (noteArray && notesContent) {
+        noteArray.forEach((note, index) => {
+            console.log(index)
             var newElement = document.createElement("div");
-            newElement.innerHTML = "Nazwa notatki: " + note.name + "<br /> Opis: " + note.content + "<br /> Data stworzenia: " + note.createdDate;
+            newElement.innerHTML = "Nazwa notatki: " + note.name + "<br /> Opis: " + note.content + "<br /> Data stworzenia: " 
+            + note.createdDate + "<br /> <button onclick='removeNote("+index+")'> Usuń notatkę </button>";
             notesContent.appendChild(newElement);
         });
     }
 }
 
-function loadPage(href) {
-    var xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", href + '.html', false);
-    xmlhttp.send();
-    var element = document.getElementById(currentPage);
-    if (element) element.parentNode.removeChild(element);
-
-    var newElement = document.createElement("div");
-    newElement.setAttribute("id", href);
-
-    newElement.innerHTML = xmlhttp.responseText;
-    contentSection.appendChild(newElement);
-
-
-    var oldMenuElement = document.getElementById(currentPage + '-link');
-    var newMenuElement = document.getElementById(href + '-link');
-    oldMenuElement.removeAttribute("class");
-    newMenuElement.classList.add("active");
-    if (href == "todo" && !notesContent) {
-        notesContent = document.getElementById("my-notes");
-    }
-    currentPage = href;
-    localStorage.setItem("currentPage", currentPage);
+function removeNote(index) {
+    console.log(index);
 }
 
 
+// ------------------ END NOTES FUNCTIONS ------------------
+
+// ------------------ UTILITIES ------------------
 function getDate() {
     var currentdate = new Date();
     var day = currentdate.getDate();
@@ -92,3 +108,5 @@ function getDate() {
     (minutes < 10 ? '0' + minutes : minutes) + ":" +
     (seconds < 10 ? '0' + seconds : seconds)
 }
+
+// ------------------ END UTILITIES ------------------
