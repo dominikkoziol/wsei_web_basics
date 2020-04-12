@@ -1,0 +1,96 @@
+.coffee-break-image {
+    background-image: url('../assets/Group\ 9.png');
+}
+
+.about {
+    text-align: left;
+    /* background: radial-gradient(55.46% 202.49% at 64.87% 43.95%, #FFFFFF 0%, #FFFFFF 100%); */
+    width: 100%;
+}
+
+.about div:first-of-type {
+    align-items: flex-start;
+}
+
+.about-description {
+    height: 100%;
+    position: relative;
+    background-color: #F8F8F8;
+    ;
+}
+
+.about-description .top-right-beans {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.chessboard {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10;
+    min-height: 100vh;
+}
+
+.chessboard .pair-of-fields {
+    display: flex;
+}
+
+
+.chessboard .pair-of-fields:nth-of-type(odd) {
+    flex-direction: row-reverse;
+
+}
+
+.chessboard .pair-of-fields .text {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    color: #6E381E;
+    text-align: right;
+    box-sizing: border-box;
+
+}
+
+.chessboard .pair-of-fields:nth-of-type(odd) .text {
+    align-items: flex-start;
+    text-align: left;
+}
+
+.chessboard .pair-of-fields:nth-of-type(odd) .text  {
+    padding-left: 125px;
+}
+
+.chessboard .pair-of-fields:nth-of-type(even) .text  {
+    padding-right: 125px;
+}
+
+.chessboard .pair-of-fields:nth-of-type(odd) .photo {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.chessboard .pair-of-fields h2 {
+
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.chessboard .pair-of-fields p {
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 20px;
+    /* width: 300px; */
+    width: 70%;
+}
+
+.chessboard .pair-of-fields .photo {
+    width: 50%;
+}
