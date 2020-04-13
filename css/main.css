@@ -4,12 +4,19 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+.block-scroll {
+    overflow-y: hidden;
+}
+
 .menu {
     position: absolute;
     top: 50px;
     width: 100%;
     z-index: 100;
     /* background-color: #723A20; */
+}
+.mobile-menu-button {
+    display: none;
 }
 
 .menu ul {
@@ -182,6 +189,8 @@ button.full {
 
     .mobile-nav *:first-of-type {
         margin-left: 15px;
+        position: relative;
+        z-index: 501;
     }
 
     .mobile-nav *:last-of-type {
@@ -206,16 +215,14 @@ button.full {
     }
 
     .fullscreen-menu {
-        display: none;
-        /* position: absolute; */
-        background: #0C3B61;
-        top: 0;
-        left: -100vw;
-        width: 100vw;
+        position: absolute;
+        top: 0; left: 0; right:0; bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         height: 100vh;
-        z-index: -500;
-        text-transform: uppercase;
-        transition: 350ms;
+        display: none;
+        background: radial-gradient(84.75% 228.38% at 84.75% 27.29%, #A55F3E 0%, #6E381E 97.1%);
     }
 
     .fullscreen-menu ul {
@@ -235,6 +242,7 @@ button.full {
         z-index: 500;
         transition: 200ms;
         overflow: hidden;
+        display: flex;
     }
 
     .hamburger {

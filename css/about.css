@@ -94,3 +94,43 @@
 .chessboard .pair-of-fields .photo {
     width: 50%;
 }
+
+
+
+@media screen and (max-width: 1024px) {
+    .about div:last-of-type {
+        display: none;
+    }
+
+    .top-right-beans {
+       display: none;
+    }
+
+    .chessboard .pair-of-fields:nth-of-type(odd),  .chessboard .pair-of-fields:nth-of-type(even){
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+       
+    }
+    .chessboard .pair-of-fields:nth-of-type(odd) .text,  .chessboard .pair-of-fields:nth-of-type(even) .text {
+        padding: 0;
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+    }
+
+    .chessboard .pair-of-fields:nth-of-type(odd) .photo,  .chessboard .pair-of-fields:nth-of-type(even) .photo {
+        justify-content: center;
+        align-items: center;
+        margin: 20px 0;
+        width: 100%;
+    }
+    .pair-of-fields > * {
+        width: 100%;
+        text-align: center;
+    }
+}

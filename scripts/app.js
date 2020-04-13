@@ -2,15 +2,23 @@ let noteArray = (localStorage.getItem("Note") ? JSON.parse(localStorage.getItem(
 let currentPage = localStorage.getItem("currentPage") ? localStorage.getItem("currentPage") : "home";
 const contentSection = document.getElementById("content");
 let notesContent = null;
+let isOpen = false;
 loadPage(currentPage);
 
-function getLastId(array) {
-    if (noteArray.length == 0) return 0;
-    var lastNoteById = _.sortBy(noteArray, (o) => o.id);
-    var newId = lastNoteById[lastNoteById.length - 1].id + 1;
-    return newId;
-}
+function openOrCloseMenu() {
+    isOpen = !isOpen;
 
+    if (isOpen) {
+        document.getElementById("hamburger").classList.add("open");
+        document.getElementById("fullscreen-menu").classList.add("menu-active");
+        document.getElementsByTagName("body")[0].classList.add("block-scroll");
+    } else {
+        document.getElementById("hamburger").classList.remove("open");
+        document.getElementById("fullscreen-menu").classList.remove("menu-active");
+        document.getElementsByTagName("body")[0].classList.remove("block-scroll");
+    }
+
+}
 
 function loadPage(href) {
     var xmlhttp = new XMLHttpRequest();
@@ -40,6 +48,10 @@ function loadPage(href) {
     localStorage.setItem("currentPage", currentPage);
 }
 
+function loadPageMobile(route) {
+    openOrCloseMenu();
+    loadPage(route);
+}
 // ------------------ ALL ONCLICKS --------------------
 
 document.getElementById("home-link").addEventListener("click", () => loadPage("home"));
@@ -47,10 +59,24 @@ document.getElementById("about-link").addEventListener("click", () => loadPage("
 document.getElementById("movie-link").addEventListener("click", () => loadPage("movie"));
 document.getElementById("todo-link").addEventListener("click", () => loadPage("todo"));
 
+document.getElementById("hamburger").addEventListener("click", () => openOrCloseMenu());
+
+document.getElementById("home-link-mobile").addEventListener("click", () => loadPageMobile("home"));
+document.getElementById("about-link-mobile").addEventListener("click", () => loadPageMobile("about"));
+document.getElementById("movie-link-mobile").addEventListener("click", () => loadPageMobile("movie"));
+document.getElementById("todo-link-mobile").addEventListener("click", () => loadPageMobile("todo"));
+
 // ------------------ END ONCLICKS --------------------
 
 // ------------------ NOTES FUNCTIONS ------------------
 
+
+function getLastId(array) {
+    if (noteArray.length == 0) return 0;
+    var lastNoteById = _.sortBy(noteArray, (o) => o.id);
+    var newId = lastNoteById[lastNoteById.length - 1].id + 1;
+    return newId;
+}
 
 /**
  * @name - Name of note
@@ -80,6 +106,7 @@ function addNote() {
     noteArray.push(note);
     localStorage.setItem("Note", JSON.stringify(noteArray));
     addToHtml(note);
+    document.getElementById("editNote").classList.remove("active-button");
 }
 
 function loadNotes() {
@@ -88,6 +115,7 @@ function loadNotes() {
         noteArray.forEach((note) => {
             addToHtml(note);
         });
+        
     }
 }
 
@@ -106,6 +134,7 @@ function removeNote(id) {
     document.getElementById("note" + id).remove();
     _.remove(noteArray, (el) => el.id == id);
     localStorage.setItem("Note", JSON.stringify(noteArray));
+    document.getElementById("editNote").classList.remove("active-button");
 }
 
 function enableEditNote(id) {
@@ -116,6 +145,7 @@ function enableEditNote(id) {
     if (note) {
         document.getElementById("note-form").elements[0].value = note.name;
         document.getElementById("note-form").elements[1].value = note.content;
+        document.getElementById("editNote").classList.add("active-button");
     }
 
 }
@@ -130,9 +160,11 @@ function editNote(id) {
         noteArray[index].content = content;
 
         document.getElementById("note" + id).innerHTML = "Nazwa notatki: " + noteArray[index].name + "<br /> Opis: " + noteArray[index].content + "<br /> Data stworzenia: " +
-            noteArray[index].createdDate + "<br /> <button id='note-button" + noteArray[index].id + "'> Usuń notatkę </button>";
+            noteArray[index].createdDate + "<br /> <button id='note-button" + noteArray[index].id + "'>  Usuń notatkę </button> <button id='edit-button" + noteArray[index].id + "'>Edytuj</button>";
 
         localStorage.setItem("Note", JSON.stringify(noteArray));
+
+        document.getElementById("editNote").classList.remove("active-button");
     }
 
 }

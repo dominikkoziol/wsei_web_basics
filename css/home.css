@@ -297,8 +297,9 @@
 
     .main {
         padding: 0;
-        padding-top: 50px;
     }
 
-
+    .menu {
+        top: 20px;
+    }
 }
