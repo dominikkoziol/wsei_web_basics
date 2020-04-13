@@ -1,0 +1,17 @@
+.movie {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.movie h1 {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 30px;
+    font-size: 3em;
+}
+
+.movie video {
+    max-width: 100%;
+}
