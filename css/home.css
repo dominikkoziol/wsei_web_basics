@@ -251,12 +251,40 @@
         font-size: 15px;
     }
 
-
     .two-column div:first-of-type button {
         align-self: center;
     }
+
     
-    .offer-container {
-        grid-template-columns: 1fr 1fr;
+    .offer {
+        height: 100%;
+        background-size: 160px;
     }
+
+    .offer-container {
+        grid-template-columns: 1fr;
+    }
+    .offer-container > div {
+        margin: 10px 0;
+        grid-template-columns: 1fr;
+    }
+
+    .trivia .two-column{
+        flex-direction: column;
+        justify-content: space-around;
+    }
+   
+    .trivia .two-column div:first-of-type {
+        height: 50%;
+    }
+    .trivia .two-column div:nth-of-type(2) {
+        display: none;
+    }
+
+    .main {
+        padding: 0;
+        padding-top: 50px;
+    }
+
+
 }

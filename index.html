@@ -18,13 +18,29 @@
 
 <body>
     <nav class="menu">
-        <ul>
+        <ul class="desktop-menu">
             <li><img src="assets/bean.svg" alt="bean"></li>
             <li id="home-link"><a>Home</a></li>
             <li id="about-link"><a>About</a></li>
             <li id="movie-link"><a>Movie</a></li>
             <li id="todo-link"> <a>ToDo List</a></li>
         </ul>
+
+        <div class="mobile-menu-button">
+            <div class="mobile-nav">
+                <img src="assets/bean.svg" alt="bean">
+                <button class="hamburger" ng-click="openMenu()" ng-class="{open: isMenuActive}"></button>
+            </div>
+            <div class="fullscreen-menu" ng-class="{'menu-active': isMenuActive}">
+                <ul>
+                    <li id="home-link-mobile"><a>Home</a></li>
+                    <li id="about-link-mobile"><a>About</a></li>
+                    <li id="movie-link-mobile"><a>Movie</a></li>
+                    <li id="todo-link-mobile"> <a>ToDo List</a></li>
+                </ul>
+            </div>
+        </div>
+
     </nav>
     <section id="content">
 
@@ -34,12 +50,12 @@
             <div><img src="assets/whh_coffeebean.png" alt="bean"></div>
             <div>
                 <p>
-                    6229 Fairview St undefined Albany, <br /> Rhode Island 56989 United States
+                    Rhode Island 56989 United States
                 </p>
             </div>
             <div>
                 <a href=" https://github.com/dominikkoziol/wsei_web_basics" target="_blank">
-                    https://github.com/dominikkoziol/wsei_web_basics
+                    See code on GitHub!
                 </a>
             </div>
         </section>

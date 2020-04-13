@@ -30,7 +30,7 @@ body {
 
 }
 
-.menu ul li::after{
+.menu ul li::after {
     content: '';
     position: absolute;
     top: -11px;
@@ -38,14 +38,14 @@ body {
     width: 100%;
     height: 100%;
     border-radius: 10px;
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
     transition: 0.3s;
     padding: 10px;
     pointer-events: none;
     opacity: 0;
 }
 
-.menu ul li:hover::after{
+.menu ul li:hover::after {
     opacity: 1;
 }
 
@@ -57,9 +57,10 @@ body {
 footer {
     height: 150px;
     background-color: #F8F8F8;
+    max-width: 100%;
 }
 
-footer > section {
+footer>section {
     max-width: 1200px;
     margin: auto;
     display: flex;
@@ -78,11 +79,11 @@ footer div {
     line-height: 36px;
 }
 
-footer div:first-of-type{
+footer div:first-of-type {
     margin-right: 20%;
 }
 
-footer div:not(:first-of-type){
+footer div:not(:first-of-type) {
     padding-left: 30px;
     flex: 1;
     border-left: 1px solid #AFAFAF;
@@ -111,7 +112,7 @@ footer div a {
 
 
 /* HALFED BUTTON */
-button.halfed{
+button.halfed {
     display: block;
     border-radius: 6em;
     border: 2px solid white;
@@ -125,10 +126,10 @@ button.halfed{
 
 button.halfed b {
     transition: 0.3s;
-display: inline-block;
+    display: inline-block;
 }
 
-button.halfed span{
+button.halfed span {
     position: absolute;
     right: -2px;
     top: 0;
@@ -143,7 +144,7 @@ button.halfed span{
 
 }
 
-button.halfed span img{
+button.halfed span img {
     width: 18px;
 }
 
@@ -151,11 +152,11 @@ button.halfed:hover b {
     transform: translateX(9px);
 }
 
-button.halfed:hover span{
+button.halfed:hover span {
     opacity: 0;
 }
 
-button.full{
+button.full {
     background: #6E381E;
     box-shadow: 0px 10px 30px rgba(106, 59, 36, 0.14);
     border-radius: 3em;
@@ -167,4 +168,114 @@ button.full{
     padding: 11px 26px;
     box-sizing: border-box;
     border: 0;
+}
+
+
+@media screen and (max-width: 1200px) {
+  
+    .mobile-menu-button, .mobile-nav{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .mobile-nav *:first-of-type {
+        margin-left: 15px;
+    }
+
+    .mobile-nav *:last-of-type {
+        margin-right: 15px;
+    }
+
+    footer section div {
+        font-size: 12px;
+        line-height: 16px;
+        margin: 0 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer section div:first-of-type {
+        margin: 0;
+    }
+
+    footer div img {
+        width: 70%;
+    }
+
+    .fullscreen-menu {
+        display: none;
+        /* position: absolute; */
+        background: #0C3B61;
+        top: 0;
+        left: -100vw;
+        width: 100vw;
+        height: 100vh;
+        z-index: -500;
+        text-transform: uppercase;
+        transition: 350ms;
+    }
+
+    .fullscreen-menu ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        list-style-type: none;
+    }
+
+    .fullscreen-menu ul li {
+        margin: 10px 0;
+    }
+
+    .menu-active {
+        left: 0;
+        z-index: 500;
+        transition: 200ms;
+        overflow: hidden;
+    }
+
+    .hamburger {
+        display: block;
+        width: 30px;
+        height: 25px;
+        border: 0;
+        border-top: 3px solid #ffffff;
+        background: transparent;
+        position: relative;
+        transition: 0.2s transform linear;
+        z-index: 5010;
+    }
+
+    .hamburger::before,
+    .hamburger::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border-top: 3px solid #ffffff;
+        transform: translateY(10px);
+    }
+
+    .hamburger::after {
+        transform: translateY(25px);
+        transition: 0.2s transform linear;
+    }
+
+    .open {
+        transform: rotate(45deg) translateY(5px);
+        border: none;
+        border-top: none !important;
+    }
+
+    .open::after {
+        transform: rotate(-90deg) translateX(-10px) !important;
+    }
+
+    .menu .desktop-menu {
+        display: none;
+    }
 }
