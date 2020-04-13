@@ -255,30 +255,44 @@
         align-self: center;
     }
 
-    
+
     .offer {
         height: 100%;
         background-size: 160px;
     }
 
+    .offer h2 {
+        font-size: 32px;
+    }
+
     .offer-container {
         grid-template-columns: 1fr;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
     }
-    .offer-container > div {
+
+    .offer-container>div {
         margin: 10px 0;
         grid-template-columns: 1fr;
     }
 
-    .trivia .two-column{
+    .trivia .two-column {
         flex-direction: column;
         justify-content: space-around;
     }
-   
+
     .trivia .two-column div:first-of-type {
         height: 50%;
     }
+
     .trivia .two-column div:nth-of-type(2) {
         display: none;
+    }
+
+    .trivia .halfed {
+        margin-top: 15px;
     }
 
     .main {
