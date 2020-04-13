@@ -94,12 +94,12 @@ function loadNotes() {
 function addToHtml(note) {
     var newElement = document.createElement("div");
     newElement.innerHTML = "Nazwa notatki: " + note.name + "<br /> Opis: " + note.content + "<br /> Data stworzenia: " +
-        note.createdDate + "<br /> <button id='note-button" + note.id + "'> Usuń notatkę </button>";
+        note.createdDate + "<br /> <button id='note-button" + note.id + "'> Usuń notatkę </button> <button id='edit-button" + note.id + "'>Edytuj</button>";
 
     newElement.setAttribute("id", "note" + note.id);
     document.getElementById("my-notes").appendChild(newElement);
     document.getElementById("note-button" + note.id).addEventListener("click", () => removeNote(note.id));
-    document.getElementById("note" + note.id).addEventListener("click", () => enableEditNote(note.id));
+    document.getElementById("edit-button" + note.id).addEventListener("click", () => enableEditNote(note.id));
 }
 
 function removeNote(id) {

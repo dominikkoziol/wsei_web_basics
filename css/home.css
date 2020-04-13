@@ -1,5 +1,3 @@
-
-
 .main {
     background: radial-gradient(84.75% 228.38% at 84.75% 27.29%, #A55F3E 0%, #6E381E 97.1%);
     position: relative;
@@ -30,7 +28,7 @@
     margin-bottom: 2em;
 }
 
-.two-column div button{
+.two-column div button {
     align-self: flex-start;
 }
 
@@ -92,10 +90,8 @@
     height: 80%;
     color: #000000;
     font-weight: bold;
-    flex-wrap: wrap;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    align-items: center;
 }
 
 .offer-container>div {
@@ -106,9 +102,8 @@
     align-items: center;
     flex-wrap: wrap;
     margin: auto;
-    width: 80%;
     padding: 30px 10px 20px;
-    width: 80%;    
+    width: 80%;
     background: white;
     border-radius: 15px;
 }
@@ -160,25 +155,25 @@
     background-position: center;
 }
 
-.trivia .two-column div:nth-of-type(2){
+.trivia .two-column div:nth-of-type(2) {
     display: flex;
     align-items: center;
     justify-content: center;
-} 
+}
 
 .big-bean {
     position: relative;
 }
 
-.big-bean .bean-desc{
+.big-bean .bean-desc {
     color: white;
-    position: absolute;    
+    position: absolute;
     font-size: 12px;
     width: 150px;
     text-align: center;
 }
 
-.bean-desc::after{
+.bean-desc::after {
     content: '';
     position: absolute;
     bottom: -120px;
@@ -188,7 +183,7 @@
     background: white;
 }
 
-.bean-desc::before{
+.bean-desc::before {
     content: '';
     position: absolute;
     bottom: -25px;
@@ -199,31 +194,69 @@
     background: white
 }
 
-.bean-desc.top-left{
+.bean-desc.top-left {
     top: -120px;
     left: 60px;
 }
 
-.bean-desc.top-right{
+.bean-desc.top-right {
     top: -70px;
     right: 60px;
 
 }
 
-.bean-desc.bottom-left{
+.bean-desc.bottom-left {
     bottom: -60px;
     left: 30px;
 }
 
-.bean-desc.bottom-right{
+.bean-desc.bottom-right {
     bottom: -70px;
     right: 80px;
 }
 
-.bean-desc.bottom-left::after, .bean-desc.bottom-right::after{
+.bean-desc.bottom-left::after,
+.bean-desc.bottom-right::after {
     top: -110px;
 }
 
-.bean-desc.bottom-left::before, .bean-desc.bottom-right::before{
+.bean-desc.bottom-left::before,
+.bean-desc.bottom-right::before {
     top: -15px;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .cup-of-coffe {
+        display: none;
+    }
+
+    .two-column div:first-of-type {
+        width: 100%;
+    }
+
+    .two-column div:first-of-type div {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .two-column div:first-of-type h1 {
+        font-size: 36px;
+    }
+
+    .two-column div:first-of-type p {
+        font-size: 15px;
+    }
+
+
+    .two-column div:first-of-type button {
+        align-self: center;
+    }
+    
+    .offer-container {
+        grid-template-columns: 1fr 1fr;
+    }
 }

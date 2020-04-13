@@ -1,14 +1,18 @@
-#note-form {
-    margin-top: 300px;
+.todo {
+    color: white;
+    padding-top: 50px;
+    padding-left: 0;
 }
+
 
 #my-notes {
     display: flex;
     flex-wrap: wrap;
-    
+    background: #e5e5e5;
+    height: 100%;
 }
 
-#my-notes div{
+#my-notes div {
     width: 350px;
     margin: 10px;
     line-height: 25px;
@@ -16,5 +20,102 @@
     background-color: #E5E5E5;
     padding: 10px;
     border-radius: 6px;
-    color:#6a3b24b8;
+    color: #6a3b24b8;
+    
+}
+
+#note-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-element {
+    display: flex;
+    margin: 10px 0;
+    justify-content: flex-start;
+}
+
+.form-element label {
+    text-align: end;
+    box-sizing: border-box;
+    padding-right: 10px;
+    width: 100px;
+}
+
+.form-element input,
+.form-element textarea {
+    width: 450px;
+    border-radius: 6px;
+}
+
+
+textarea {
+    height: 150px;
+    resize: none;
+}
+
+.todo-form {
+    display: flex;
+    justify-content: center;
+    margin: 120px 0;
+}
+
+.todo-form>div {
+    width: 50%;
+}
+
+.form-guide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todo button {
+    color: white;
+    box-sizing: border-box;
+    color: #6E381E;
+    border: 2px solid #6E381E;
+    padding: 10px 15px;
+    border-radius: 25px;
+    background: white;
+    cursor: pointer;
+}
+
+
+.todo h1 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.todo ol {
+    margin-top: 45px;
+    list-style-type: decimal;
+}
+
+.todo ol li {
+    margin: 10px 0;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .todo {
+        padding: 0;
+        padding-top: 50px;
+    }
+    .todo-form {
+        flex-direction: column;
+    }
+
+    .todo-form > div {
+        width: 100%;
+    }
+
+    .form-element input,
+    .form-element textarea {
+        width: 200px;
+        border-radius: 6px;
+    }
+
 }
