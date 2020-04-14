@@ -5,11 +5,24 @@
     align-items: center;
 }
 
+.movie-content {
+    /* max-width: 1366px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.movie-content > * {
+    width: 50%;
+}
+
 .movie h1 {
     color: white;
     font-weight: bold;
     margin-bottom: 30px;
     font-size: 3em;
+    text-align: center;
 }
 
 .movie video {
