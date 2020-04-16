@@ -41,7 +41,7 @@ function loadPage(href) {
     newMenuElement.classList.add("active");
     if (href == "todo") {
         if (!notesContent) notesContent = document.getElementById("my-notes");
-
+        document.getElementById("addNote").addEventListener("click", () => addNote());
         loadNotes();
     }
     currentPage = href;
@@ -127,7 +127,7 @@ function loadNotes() {
         noteArray.forEach((note) => {
             addToHtml(note);
         });
-        
+
     }
 }
 
@@ -174,6 +174,8 @@ function editNote(id) {
         document.getElementById("note" + id).innerHTML = "Nazwa notatki: " + noteArray[index].name + "<br /> Opis: " + noteArray[index].content + "<br /> Data stworzenia: " +
             noteArray[index].createdDate + "<br /> <button id='note-button" + noteArray[index].id + "'>  Usuń notatkę </button> <button id='edit-button" + noteArray[index].id + "'>Edytuj</button>";
 
+        document.getElementById("note-button" + note.id).addEventListener("click", () => removeNote(note.id));
+        document.getElementById("edit-button" + note.id).addEventListener("click", () => enableEditNote(note.id));
         localStorage.setItem("Note", JSON.stringify(noteArray));
         document.getElementById("note-button" + noteArray[index].id).addEventListener("click", () => removeNote(noteArray[index].id));
         document.getElementById("editNote").classList.remove("active-button");

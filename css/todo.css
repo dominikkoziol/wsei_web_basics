@@ -80,6 +80,15 @@ textarea {
     align-items: center;
 }
 
+.form-guide ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: left;
+    width: 300px;
+}
+
 .todo button {
     color: white;
     box-sizing: border-box;
