@@ -9,12 +9,12 @@ body {
 }
 
 .menu {
-    position: absolute;
+    position: fixed;
     top: 50px;
     width: 100%;
     z-index: 100;
-    /* background-color: #723A20; */
 }
+
 .mobile-menu-button {
     display: none;
 }
@@ -24,6 +24,7 @@ body {
     margin: auto;
     display: flex;
     align-items: center;
+    transition: 0.2s;
 }
 
 .menu ul li {
@@ -34,7 +35,6 @@ body {
     cursor: pointer;
     transition: 700ms;
     position: relative;
-
 }
 
 .menu ul li::after {
@@ -56,10 +56,77 @@ body {
     opacity: 1;
 }
 
+.menu.scrolled .desktop-menu{
+    background: rgba(0,0,0, 0.3);
+    border-radius: 0 0 10px 10px;
+    transition-delay: 0.2s;
+    padding: 3px;
+    transform: translateY(-50px);
+}
+
 .container {
     height: 100vh;
 }
 
+.main {
+    background: radial-gradient(84.75% 228.38% at 84.75% 27.29%, #A55F3E 0%, #6E381E 97.1%);
+    position: relative;
+    box-sizing: border-box;
+    padding: 50px 0 0;
+}
+
+.two-column {
+    max-width: 1200px;
+    width: 100%;
+    margin: auto;
+    height: 100%;
+    justify-content: space-between;
+    display: flex;
+}
+
+.two-column>div {
+    width: 50%;
+    color: white;
+    padding-left: 20px;
+}
+
+.two-column> div p {
+    margin-top: 25px;
+    font-size: 18px;
+    line-height: 1.6em;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 2em;
+}
+
+.two-column> div button {
+    align-self: flex-start;
+}
+
+.two-column>div h1 {
+    font-size: 68px;
+    line-height: 1.4em;
+    font-weight: bold;
+}
+
+.two-column> div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.two-column> div:first-of-type div {
+    max-width: 650px;
+}
+
+.two-column> div:nth-of-type(2) {
+    background-position: center right;
+    background-size: contain;
+    background-repeat: no-repeat;
+    max-width: 750px;
+    box-sizing: border-box;
+}
 
 footer {
     height: 150px;
@@ -216,7 +283,7 @@ button.full {
 
     .fullscreen-menu {
         position: absolute;
-        top: 0; left: 0; right:0; bottom: 0;
+        top: -20px; left: 0; right:0; bottom: 0;
         display: flex;
         justify-content: center;
         align-items: center;

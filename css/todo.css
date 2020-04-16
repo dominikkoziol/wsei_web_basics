@@ -1,13 +1,15 @@
-.todo {
-    color: white;
-    padding-top: 50px;
-    padding-left: 0;
-}
 
+
+.notes-form{
+    display: flex;
+    flex-direction: column;
+}
 
 #my-notes {
     display: flex;
     flex-wrap: wrap;
+    overflow: auto;
+    margin: 10px;
 }
 
 #my-notes div {
@@ -27,6 +29,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 30px;
 }
 
 #editNote {
@@ -41,13 +44,12 @@
     display: flex;
     margin: 10px 0;
     justify-content: flex-start;
+    flex-direction: column;
 }
 
 .form-element label {
-    text-align: end;
     box-sizing: border-box;
-    padding-right: 10px;
-    width: 100px;
+    padding: 0px 0px 2px 12px;
 }
 
 .form-element input,
@@ -106,11 +108,22 @@ textarea {
 
 
 @media screen and (max-width: 1024px) {
+    .vertical{
+        flex-direction: column;
+        padding-top: 50px;
+        align-items: center;
+    }
+
     .todo {
         padding: 0;
         padding-top: 1px;
         height: 100%;
     }
+
+    #todo .container {
+        height: auto;
+    }
+    
     .todo-form {
         flex-direction: column;
     }

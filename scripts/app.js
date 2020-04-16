@@ -68,6 +68,18 @@ document.getElementById("todo-link-mobile").addEventListener("click", () => load
 
 // ------------------ END ONCLICKS --------------------
 
+// ------------------ SCROLL EVENT --------------------
+document.addEventListener('scroll', (event) => {
+    const menuEl = document.querySelector('.menu');
+    if(window.scrollY >= 200){
+        menuEl.classList.add('scrolled');
+    } else {
+        menuEl.classList.remove('scrolled');
+    }
+})
+
+// ------------------ END SCROLL EV -------------------
+
 // ------------------ NOTES FUNCTIONS ------------------
 
 

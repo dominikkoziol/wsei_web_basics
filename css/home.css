@@ -1,66 +1,6 @@
-.main {
-    background: radial-gradient(84.75% 228.38% at 84.75% 27.29%, #A55F3E 0%, #6E381E 97.1%);
-    position: relative;
-    box-sizing: border-box;
-    padding: 50px 0 0 50px;
-}
-
-.two-column {
-    max-width: 1200px;
-    width: 100%;
-    margin: auto;
-    height: 100%;
-    justify-content: space-between;
-    display: flex;
-}
-
-.two-column>div {
-    width: 50%;
-    color: white;
-}
-
-.two-column div p {
-    margin-top: 25px;
-    font-size: 18px;
-    line-height: 1.6em;
-    font-weight: 300;
-    color: rgba(255, 255, 255, 0.6);
-    margin-bottom: 2em;
-}
-
-.two-column div button {
-    align-self: flex-start;
-}
-
-.two-column div h1 {
-    font-size: 68px;
-    line-height: 1.4em;
-    font-weight: bold;
-}
-
-.two-column div:first-of-type {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.two-column div:first-of-type div {
-    max-width: 650px;
-}
-
 .cup-of-coffe {
     background-image: url("../assets/cup_coffee.png");
 }
-
-.two-column div:nth-of-type(2) {
-    background-position: center right;
-    background-size: contain;
-    background-repeat: no-repeat;
-    max-width: 750px;
-    box-sizing: border-box;
-}
-
 
 .offer {
     box-sizing: border-box;
