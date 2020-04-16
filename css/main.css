@@ -64,6 +64,15 @@ body {
     transform: translateY(-50px);
 }
 
+.menu .desktop-menu li {
+    display: flex;
+    align-items: center;
+}
+.menu .desktop-menu li svg {
+    fill: white;
+}
+
+
 .container {
     height: 100vh;
 }
@@ -184,8 +193,6 @@ footer div a {
     text-decoration: underline;
 }
 
-
-/* HALFED BUTTON */
 button.halfed {
     display: block;
     border-radius: 6em;

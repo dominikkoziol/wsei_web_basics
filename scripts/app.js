@@ -111,8 +111,8 @@ class Note {
  * @summary - adding note to note array and save to storage
  */
 function addNote() {
-    const name = document.getElementById("note-form").elements[0].value;
-    const description = document.getElementById("note-form").elements[1].value;
+    const name = sanitizeHtml(document.getElementById("note-form").elements[0].value);
+    const description = sanitizeHtml(document.getElementById("note-form").elements[1].value);
 
     let note = new Note(name, description);
     noteArray.push(note);
@@ -133,8 +133,8 @@ function loadNotes() {
 
 function addToHtml(note) {
     var newElement = document.createElement("div");
-    newElement.innerHTML = "Nazwa notatki: " + note.name + "<br /> Opis: " + note.content + "<br /> Data stworzenia: " +
-        note.createdDate + "<br /> <button id='note-button" + note.id + "'> Usuń notatkę </button> <button id='edit-button" + note.id + "'>Edytuj</button>";
+    newElement.innerHTML = "Nazwa notatki: " + sanitizeHtml(note.name) + "<br /> Opis: " + sanitizeHtml(note.content) + "<br /> Data stworzenia: " +
+        sanitizeHtml(note.createdDate) + "<br /> <button id='note-button" + sanitizeHtml(note.id) + "'> Usuń notatkę </button> <button id='edit-button" + sanitizeHtml(note.id) + "'>Edytuj</button>";
 
     newElement.setAttribute("id", "note" + note.id);
     document.getElementById("my-notes").appendChild(newElement);
@@ -168,14 +168,14 @@ function editNote(id) {
         const name = document.getElementById("note-form").elements[0].value;
         const content = document.getElementById("note-form").elements[1].value;
 
-        noteArray[index].name = name;
-        noteArray[index].content = content;
+        noteArray[index].name = sanitizeHtml(name);
+        noteArray[index].content = sanitizeHtml(content);
 
         document.getElementById("note" + id).innerHTML = "Nazwa notatki: " + noteArray[index].name + "<br /> Opis: " + noteArray[index].content + "<br /> Data stworzenia: " +
             noteArray[index].createdDate + "<br /> <button id='note-button" + noteArray[index].id + "'>  Usuń notatkę </button> <button id='edit-button" + noteArray[index].id + "'>Edytuj</button>";
 
         localStorage.setItem("Note", JSON.stringify(noteArray));
-
+        document.getElementById("note-button" + noteArray[index].id).addEventListener("click", () => removeNote(noteArray[index].id));
         document.getElementById("editNote").classList.remove("active-button");
     }
 

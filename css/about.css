@@ -4,7 +4,6 @@
 
 .about {
     text-align: left;
-    /* background: radial-gradient(55.46% 202.49% at 64.87% 43.95%, #FFFFFF 0%, #FFFFFF 100%); */
     width: 100%;
 }
 
@@ -83,7 +82,6 @@
     font-weight: 300;
     font-size: 18px;
     line-height: 20px;
-    /* width: 300px; */
     width: 70%;
 }
 
